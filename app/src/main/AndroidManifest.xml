@@ -9,6 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Evaluacion2_Covid">
+        <activity android:name=".RegistrarPacienteActivity"></activity>
+        <activity android:name=".VerPacienteActivity" />
+        <activity android:name=".Principal" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/title_activity_login" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
