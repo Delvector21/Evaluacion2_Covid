@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Principal">
+    tools:context=".PrincipalActivity"
+    >
 
     <include
         layout="@layout/toolbar">
@@ -14,7 +15,7 @@
     </include>
 
     <ListView
-        android:id="@+id/examenes_lv"
+        android:id="@+id/pacientes_lv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 

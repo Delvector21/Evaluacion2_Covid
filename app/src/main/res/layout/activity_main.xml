@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,14 +10,13 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="36dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_top"
         android:orientation="horizontal"
 
         >
 
         <TextView
-            android:id="@+id/textView2"
             android:layout_width="160dp"
             android:layout_height="25dp"
             android:layout_marginLeft="@dimen/margin_top"
@@ -24,7 +24,7 @@
             android:background="@drawable/redondo_2"
             android:gravity="center"
             android:text="Ingrese RUT"
-            android:textColor="@color/white" />
+            android:textColor="@color/purple_500" />
 
         <EditText
             android:id="@+id/login"
@@ -45,7 +45,6 @@
             android:layout_marginTop="@dimen/margin_top">
 
             <TextView
-                android:id="@+id/textView3"
                 android:layout_width="200dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="@dimen/margin_top"
@@ -54,7 +53,7 @@
                 android:background="@drawable/redondo_2"
                 android:gravity="center"
                 android:text="Ingrese Password"
-                android:textColor="@color/white" />
+                android:textColor="@color/purple_500" />
 
             <EditText
                 android:id="@+id/password"
@@ -66,7 +65,8 @@
                 android:background="@drawable/borde_redondo"
                 android:layout_marginTop="2dp"
                 android:ems="10"
-                android:inputType="numberPassword" />
+                android:inputType="numberPassword"
+                android:hint=" ultimos 4 digitos rut"/>
         </LinearLayout>
 
         <LinearLayout
@@ -80,6 +80,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Iniciar Sesion"
+                android:backgroundTint="@color/celeste"
+                android:textColor="@color/purple_500"
                 android:layout_gravity="center"/>
         </LinearLayout>
 

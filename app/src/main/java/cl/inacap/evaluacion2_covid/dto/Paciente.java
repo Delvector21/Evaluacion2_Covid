@@ -2,15 +2,24 @@ package cl.inacap.evaluacion2_covid.dto;
 
 public class Paciente {
 
+    private int id;
     private String rut;
     private String nombre;
     private String apellido;
     private String fecha;
     private String area;
     private boolean sintoma;
-    private int temperatura;
+    private float temperatura;
     private boolean tos;
     private int presion;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getRut() {
         return rut;
@@ -60,11 +69,11 @@ public class Paciente {
         this.sintoma = sintoma;
     }
 
-    public int getTemperatura() {
+    public float getTemperatura() {
         return temperatura;
     }
 
-    public void setTemperatura(int temperatura) {
+    public void setTemperatura(float temperatura) {
         this.temperatura = temperatura;
     }
 

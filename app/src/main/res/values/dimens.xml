@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="margin_top">20dp</dimen>
+    <dimen name="margin_top10">10dp</dimen>
+    <dimen name="margin_top5">5dp</dimen>
     <dimen name="margin_left_titulo_app">40dp</dimen>
     <dimen name="titulo_app_size">30sp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->
