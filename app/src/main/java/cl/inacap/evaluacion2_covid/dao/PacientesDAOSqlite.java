@@ -45,13 +45,13 @@ public class PacientesDAOSqlite implements PacientesDAO{
                         p.setApellido(c.getString(3));
                         p.setFecha(c.getString(4));
                         p.setArea(c.getString(5));
-                        if (c.getString(6) == "Si" ){
+                        if (c.getString(6).equals( "Si" )){
                             p.setSintoma(true);
                         }else{
                             p.setSintoma(false);
                         }
                         p.setTemperatura(c.getFloat(7));
-                        if (c.getString(8) == "Si"){
+                        if (c.getString(8).equals( "Si")){
                             p.setTos(true);
                         }else{
                             p.setTos(false);
@@ -88,7 +88,7 @@ public class PacientesDAOSqlite implements PacientesDAO{
         }
 
         String sql = String.format("INSERT INTO pacientes(rut,nombre,apellido,fecha,area,sintomas,temperatura,tos,presion)" +
-                " VALUES ('%s','%s','%s','%s','%s','%d','%d','%d','%d')"
+                " VALUES ('%s','%s','%s','%s','%s','%s','%f','%s','%d')"
                 ,p.getRut(), p.getNombre(), p.getApellido(), p.getFecha(), p.getArea(),
                 sintoma, p.getTemperatura(), tos, p.getPresion());
         writer.execSQL(sql);

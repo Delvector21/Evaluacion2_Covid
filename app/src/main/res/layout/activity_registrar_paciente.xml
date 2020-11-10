@@ -127,7 +127,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginRight="20dp"
-            android:inputType="textPersonName"
+            android:inputType="date"
+            android:focusableInTouchMode="false"
             android:background="@drawable/borde_redondo"
             />
 
@@ -196,7 +197,12 @@
             android:id="@+id/sintomas_rg"
             android:layout_width="33dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:textOn="Si"
+            android:textOff="No"
+            android:showText="false"
+
+            />
 
         <TextView
             android:id="@+id/textView7"

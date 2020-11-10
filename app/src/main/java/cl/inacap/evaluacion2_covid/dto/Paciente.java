@@ -1,6 +1,8 @@
 package cl.inacap.evaluacion2_covid.dto;
 
-public class Paciente {
+import java.io.Serializable;
+
+public class Paciente implements Serializable {
 
     private int id;
     private String rut;

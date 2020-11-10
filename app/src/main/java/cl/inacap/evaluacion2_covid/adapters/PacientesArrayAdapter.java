@@ -28,7 +28,7 @@ public class PacientesArrayAdapter extends ArrayAdapter<Paciente> {
     public PacientesArrayAdapter(@NonNull Context context, int resource, @NonNull List<Paciente> objects) {
         super(context, resource, objects);
         this.activity = (Activity) context;
-        this.pacientes = pacientes;
+        this.pacientes = objects;
 
     }
 
@@ -38,13 +38,18 @@ public class PacientesArrayAdapter extends ArrayAdapter<Paciente> {
 
         LayoutInflater inflater = this.activity.getLayoutInflater();
         View fila = inflater.inflate(R.layout.paciente_list,null,true);
+
         TextView nombreTv = fila.findViewById(R.id.nombreVw);
         TextView rutTv = fila.findViewById(R.id.rutVw);
         TextView apellidoTv = fila.findViewById(R.id.apellidoVw);
         TextView fechaTv = fila.findViewById(R.id.fechaVw);
         ImageView covidTv = fila.findViewById(R.id.covidVw);
 
-        if (pacientes.get(position).isSintoma()) covidTv.setImageResource(R.drawable.covid_20);
+
+            if (pacientes.get(position).isSintoma()) {
+                covidTv.setImageResource(R.drawable.covid_20);
+            } 
+
         nombreTv.setText(pacientes.get(position).getNombre());
         rutTv.setText(pacientes.get(position).getRut());
         apellidoTv.setText(pacientes.get(position).getApellido());

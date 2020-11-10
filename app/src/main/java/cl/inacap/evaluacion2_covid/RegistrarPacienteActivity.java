@@ -1,9 +1,8 @@
 package cl.inacap.evaluacion2_covid;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.hardware.Camera;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -13,12 +12,17 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import java.util.Calendar;
+import java.util.TimeZone;
 
 import cl.inacap.evaluacion2_covid.dao.PacientesDAO;
 import cl.inacap.evaluacion2_covid.dao.PacientesDAOSqlite;
+import cl.inacap.evaluacion2_covid.dto.Paciente;
 
 public class RegistrarPacienteActivity extends AppCompatActivity {
 
@@ -64,19 +68,52 @@ public class RegistrarPacienteActivity extends AppCompatActivity {
         this.fechaTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Calendar cldr = Calendar.getInstance();
+                Calendar cldr = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+
                 DatePickerDialog picker = new DatePickerDialog(RegistrarPacienteActivity.this,
-                        new DatePickerDialog.OnDateSetListener() {
-                            @Override
-                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                fechaTxt.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
-                            }
-                        }, cldr.get(Calendar.YEAR), cldr.get(Calendar.MONTH), cldr.get(Calendar.DAY_OF_MONTH));
+                        (view, year, monthOfYear, dayOfMonth) ->
+                                fechaTxt.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year),
+                        cldr.get(Calendar.YEAR), cldr.get(Calendar.MONTH), cldr.get(Calendar.DAY_OF_MONTH));
                 picker.show();
             }
         });
 
+        this.registrarBtn.setOnClickListener(view -> {
+            Paciente p = new Paciente();
+            p.setRut(rutTxt.getText().toString());
+            p.setNombre(nombreTxt.getText().toString());
+            p.setApellido(apellidoTxt.getText().toString());
+            p.setFecha(fechaTxt.getText().toString());
+            p.setArea((String) AreaTxt.getSelectedItem());
+            if (sintomaTxt.isChecked()){
+                p.setSintoma(true);
+            }else{
+                p.setSintoma(false);
+            }
+            p.setTemperatura(Float.parseFloat(TempTxt.getText().toString()));
+            if (tosTxt.isChecked()){
+                p.setTos(true);
+            }else{
+                p.setTos(false);
+            }
+            p.setPresion(Integer.parseInt(presionTxt.getText().toString()));
+            pdao.save(p);
+            startActivity(new Intent(RegistrarPacienteActivity.this,
+                    PrincipalActivity.class));
+            Toast.makeText(RegistrarPacienteActivity.this, "Paciente Ingresado", Toast.LENGTH_SHORT).show();
 
 
+
+        });
+
+
+
+
+
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }
