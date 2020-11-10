@@ -44,11 +44,12 @@ public class PrincipalActivity extends AppCompatActivity {
                 R.layout.paciente_list, pacientes);
         pacientesLv = findViewById(R.id.pacientes_lv);
         pacientesLv.setAdapter(adapter);
-        /*pacientesLv.setOnItemClickListener((adapterView, view, i, l) -> {
-            Intent intent = new Intent(Principal.this,
+        pacientesLv.setOnItemClickListener((adapterView, view, i, l) -> {
+            Intent intent = new Intent(PrincipalActivity.this,
                     VerPacienteActivity.class);
             Paciente actual = pacientes.get(i);
             intent.putExtra("paciente", actual);
-        });*/
+            startActivity(intent);
+        });
     }
 }
