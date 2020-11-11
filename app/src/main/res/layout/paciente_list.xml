@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_marginTop="@dimen/margin_top5"
-    android:layout_marginLeft="50dp"
-    android:layout_marginRight="100dp"
-    android:background="@drawable/redondo_2">
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="@dimen/margin_top10"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/redondo_2">
 
     <TextView
         android:id="@+id/nombreVw"
@@ -22,8 +26,20 @@
         android:layout_marginTop="22dp"
         android:layout_weight="1"
         android:text="TextView"
-        android:textStyle="bold"
-        android:textColor="@color/purple_500"/>
+
+        android:textColor="@color/purple_500" />
+
+    <TextView
+        android:id="@+id/rutVw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="3dp"
+        android:text="TextView"
+
+        android:textColor="@color/purple_500" />
 
     <TextView
         android:id="@+id/apellidoVw"
@@ -35,38 +51,26 @@
         android:layout_marginStart="82dp"
         android:layout_marginTop="22dp"
         android:text="apellido"
-        android:textStyle="bold"
+
         android:textColor="@color/purple_500">
 
     </TextView>
 
-    <ImageView
-        android:id="@+id/covidVw"
-        android:layout_width="52dp"
-        android:layout_height="53dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
+        <ImageView
+            android:id="@+id/covidVw"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
 
-        android:layout_centerInParent="true"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="51dp"
-        android:layout_marginRight="15dp"
-        android:layout_weight="1"
-        tools:srcCompat="@tools:sample/avatars" />
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="31dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/rutVw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="3dp"
-        android:text="TextView"
-        android:textStyle="bold"
-        android:textColor="@color/purple_500"/>
-
-    <TextView
+        <TextView
         android:id="@+id/fechaVw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -76,8 +80,8 @@
         android:layout_marginTop="42dp"
         android:layout_marginBottom="3dp"
         android:text="TextView"
-        android:textStyle="bold"
-        android:textColor="@color/purple_500"/>
 
+        android:textColor="@color/purple_500" />
 
-</RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

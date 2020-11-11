@@ -47,7 +47,7 @@ public class PacientesArrayAdapter extends ArrayAdapter<Paciente> {
 
 
             if (pacientes.get(position).isSintoma()) {
-                covidTv.setImageResource(R.drawable.covid_20);
+                covidTv.setImageResource(R.drawable.logo_lv);
             }
 
         nombreTv.setText(pacientes.get(position).getNombre());

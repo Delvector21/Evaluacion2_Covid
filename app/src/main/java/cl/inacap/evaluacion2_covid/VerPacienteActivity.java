@@ -61,8 +61,8 @@ public class VerPacienteActivity extends AppCompatActivity {
             }else{
                 this.tosTxt.setText("No");
             }
-            this.tempTxt.setText(p.getTemperatura()+ "°C");
-            this.presionTxt.setText("Presión" + p.getPresion());
+            this.tempTxt.setText(String.format("%.1f",p.getTemperatura())+ "°C");
+            this.presionTxt.setText("" + p.getPresion());
         }
 
     }

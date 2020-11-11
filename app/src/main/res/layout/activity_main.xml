@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="38dp"
         android:layout_marginTop="@dimen/margin_top"
         android:orientation="horizontal"
 
@@ -18,56 +18,58 @@
 
         <TextView
             android:layout_width="160dp"
-            android:layout_height="25dp"
+            android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/margin_top"
             android:layout_marginRight="@dimen/margin_top"
             android:background="@drawable/redondo_2"
             android:gravity="center"
-            android:text="Ingrese RUT"
+            android:textSize="20dp"
+            android:text="Nombre"
             android:textColor="@color/purple_500" />
 
         <EditText
             android:id="@+id/login"
             android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_marginTop="2dp"
+            android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/margin_top"
+
+
             android:layout_marginRight="@dimen/margin_top"
             android:background="@drawable/borde_redondo"
             android:ems="10"
             android:inputType="text" />
     </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="@dimen/margin_top">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_marginTop="@dimen/margin_top"
+        android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="25dp"
-                android:layout_marginLeft="@dimen/margin_top"
-                android:layout_marginRight="@dimen/margin_top"
-                android:layout_weight="1"
-                android:background="@drawable/redondo_2"
-                android:gravity="center"
-                android:text="Ingrese Password"
-                android:textColor="@color/purple_500" />
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_top"
+            android:layout_marginRight="@dimen/margin_top"
+            android:layout_weight="1"
+            android:background="@drawable/redondo_2"
+            android:gravity="center"
+            android:text="Password"
+            android:textSize="20dp"
+            android:textColor="@color/purple_500" />
 
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/margin_top"
-                android:layout_marginLeft="@dimen/margin_top"
-                android:layout_weight="1"
-                android:background="@drawable/borde_redondo"
-                android:layout_marginTop="2dp"
-                android:ems="10"
-                android:inputType="numberPassword"
-                android:hint=" ultimos 4 digitos rut"/>
-        </LinearLayout>
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_top"
+            android:layout_marginRight="@dimen/margin_top"
+            android:layout_weight="1"
+            android:background="@drawable/borde_redondo"
+            android:ems="10"
+            android:hint="   ultimos 4 digitos"
+            android:inputType="numberPassword" />
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -77,12 +79,13 @@
 
             <Button
                 android:id="@+id/login_btn"
-                android:layout_width="wrap_content"
+                android:layout_width="208dp"
                 android:layout_height="wrap_content"
-                android:text="Iniciar Sesion"
+                android:layout_gravity="center"
                 android:backgroundTint="@color/celeste"
+                android:text="Iniciar Sesion"
                 android:textColor="@color/purple_500"
-                android:layout_gravity="center"/>
+                android:textSize="20dp" />
         </LinearLayout>
 
 </LinearLayout>
